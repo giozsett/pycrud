@@ -10,7 +10,7 @@ class BD:
 
     # Conecta no arquivo do banco de dados e cria um cursor.    
     def conectarBanco(self, banco_dados):
-        self.banco = sqlite3.connect('')
+        self.banco = sqlite3.connect(banco_dados)
         self.cursor = self.banco.cursor()
 
         self.criarTabelaFilmes()
@@ -20,13 +20,13 @@ class BD:
     def criarTabelaFilmes(self):
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS filmes(
-                            id INTERGER PRIMARY KEY AUTOINCREMENT,
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
                             titulo TEXT NOT NULL,
                             genero TEXT NOT NULL,
                             duracao TEXT NULL,
                             diretor TEXT NULL,
                             estudio TEXT NULL,
-                            classificacao TEXT NOT NULL
-                            ano TEXT NULL
+                            classificacao TEXT NOT NULL,
+                            ano DATE NULL
             )
         """)

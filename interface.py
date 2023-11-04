@@ -57,20 +57,36 @@ class Interface:
         print("(campos com * são obrigatórios)")
         print("")
 
-        titulo = self.solicitaValor('Título*: ', ['texto'], False)
-        genero = self.solicitaValor('Gênero*: ', ['texto'], False)
-        duracao = self.solicitaValor('Duração: ', ['texto'], True)
-        diretor = ""
-        estudio = ""
-        classificacao = "" # lembrar que a clasificação DEVE ser preenchida.
-        ano = ""
+        titulo = self.solicitaValor('Título*: ', 'texto', False)
+        genero = self.solicitaValor('Gênero*: ', 'texto', False)
+        duracao = self.solicitaValor('Duração: ', 'texto', True)
+        diretor = self.solicitaValor('Diretor: ', 'texto', True)
+        estudio = self.solicitaValor('Estúdio: ', 'texto', True)
+        classificacao = self.solicitaValor('Classificação*: ', 'texto', False)
+        ano = self.solicitaValor('Ano: ', 'numero', True)
 
 
     # Solicita que o usuário insira um valor e valida esse valor.
     # return valorDigitado
-    def solicitaValor(self, legenda, tipo = ['texto', 'numero'], permiteNulo = False):
-        pass
+    def solicitaValor(self, legenda, tipo = 'texto', permiteNulo = False):
+        valor = input(legenda)
 
+        # Verifica se está vazio.
+        if valor == "" and not permiteNulo:
+            print("Valor inválido!")
+            return self.solicitaValor(legenda, tipo, permiteNulo)
+        elif valor == "" and permiteNulo:
+            return valor
+        
+        # Verifica se está no formato correto.
+        if tipo == 'numero':
+            try:
+                opcaoSelecionada = float(opcaoSelecionada)
+            except ValueError:
+                print("Valor inválido!")
+                return self.solicitaValor(legenda, tipo, permiteNulo)
+            
+            return valor
         
 
         
