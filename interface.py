@@ -60,8 +60,14 @@ class Interface:
         titulo = self.solicitaValor('Título*: ', ['texto'], False)
         genero = self.solicitaValor('Gênero*: ', ['texto'], False)
         duracao = self.solicitaValor('Duração: ', ['texto'], True)
+        diretor = ""
+        estudio = ""
+        classificacao = "" # lembrar que a clasificação DEVE ser preenchida.
+        ano = ""
 
 
+    # Solicita que o usuário insira um valor e valida esse valor.
+    # return valorDigitado
     def solicitaValor(self, legenda, tipo = ['texto', 'numero'], permiteNulo = False):
         pass
 

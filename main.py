@@ -20,10 +20,11 @@ while opcao != 0:
     if opcao == 1:
         interface.mostraCadastroFilmes()
 
-    #Tela de lista de filmes.
+    # Tela de lista de filmes.
     if opcao == 2:
         pass
 
+    # Opção de sair.
     if opcao == 3:
         pass
 

@@ -26,6 +26,7 @@ class BD:
                             duracao TEXT NULL,
                             diretor TEXT NULL,
                             estudio TEXT NULL,
-                            classificacao TEXT NULL
+                            classificacao TEXT NOT NULL
+                            ano TEXT NULL
             )
         """)
