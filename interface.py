@@ -1,12 +1,13 @@
 # Interface do usuário.
 
 import os
+from bancodados import BD
 
 class Interface:
 
     # Método construtor da classe.
     def __init__(self):
-        pass
+        self.banco = BD("catalogofilmes.db")
 
 
     def logotipo(self):
@@ -57,6 +58,7 @@ class Interface:
         print("(campos com * são obrigatórios)")
         print("")
 
+        # Valores a serem armazenados no banco de dados.
         titulo = self.solicitaValor('Título*: ', 'texto', False)
         genero = self.solicitaValor('Gênero*: ', 'texto', False)
         duracao = self.solicitaValor('Duração: ', 'texto', True)
@@ -64,6 +66,19 @@ class Interface:
         estudio = self.solicitaValor('Estúdio: ', 'texto', True)
         classificacao = self.solicitaValor('Classificação*: ', 'texto', False)
         ano = self.solicitaValor('Ano: ', 'numero', True)
+
+        # Armazena no banco de dados.
+        valores = {
+            "titulo": titulo,
+            "genero": genero,
+            "duracao": duracao,
+            "diretor": diretor,
+            "estudio": estudio,
+            "classificacao": classificacao,
+            "ano": ano
+        }
+
+
 
 
     # Solicita que o usuário insira um valor e valida esse valor.

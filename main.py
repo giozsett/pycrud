@@ -7,7 +7,6 @@ from bancodados import BD
 
 # Faz a interface existir no main.
 interface = Interface()
-banco = BD("catalogofilmes.db")
 
 opcao = ""
 while opcao != 0:
