@@ -9,7 +9,7 @@ class Interface:
         pass
 
 
-    def Logotipo(self):
+    def logotipo(self):
         print("I_____________________________________I")
         print("|          CATÁLOGO DE FILMES         |")
         print("I_____________________________________I")
@@ -48,6 +48,22 @@ class Interface:
         print("2 - Lista de filmes.")
         print("3 - Sair.")
         print("")
+
+    
+    def mostraCadastroFilmes(self):
+        self.logotipo()
+
+        print("Insira os dados do filme:")
+        print("(campos com * são obrigatórios)")
+        print("")
+
+        titulo = self.solicitaValor('Título*: ', ['texto'], False)
+        genero = self.solicitaValor('Gênero*: ', ['texto'], False)
+        duracao = self.solicitaValor('Duração: ', ['texto'], True)
+
+
+    def solicitaValor(self, legenda, tipo = ['texto', 'numero'], permiteNulo = False):
+        pass
 
         
 

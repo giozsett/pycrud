@@ -12,3 +12,20 @@ class BD:
     def conectarBanco(self, banco_dados):
         self.banco = sqlite3.connect('')
         self.cursor = self.banco.cursor()
+
+        self.criarTabelaFilmes()
+
+    # Aspas triplas """ permitem pular linhas.
+    # TEXT NULL significa que o campo pode ficar em branco.
+    def criarTabelaFilmes(self):
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS filmes(
+                            id INTERGER PRIMARY KEY AUTOINCREMENT,
+                            titulo TEXT NOT NULL,
+                            genero TEXT NOT NULL,
+                            duracao TEXT NULL,
+                            diretor TEXT NULL,
+                            estudio TEXT NULL,
+                            classificacao TEXT NULL
+            )
+        """)
