@@ -35,4 +35,4 @@ class BD:
     def inserir(self, tabela, valores):
         sql = f"INSERT INTO {tabela}"
 
-        for chave, valor in
+        # for chave, valor in
